@@ -41,8 +41,8 @@ for i in beans:
     r = re.compile(regex).search(line)
     if not isinstance(r, types.NoneType):
         key = r.group('name') if r.group('name') in config._sections else "DEFAULTS"
-        cons_threshold = config._sections[key]["consumers_trheshold"]
-        queue_threshold = config._sections[key]["queue_trheshold"]
+        cons_threshold = config._sections[key]["consumers_threshold"]
+        queue_threshold = config._sections[key]["queue_threshold"]
         proc_url = config._sections[key]["proc_url"]
         queue = { "{#QUEUE_NAME}": r.group('name'), "{#CONS_THRESHOLD}": cons_threshold, "{#QUEUE_THRESHOLD}": queue_threshold, "{#PROC_URL}": proc_url }
         queue_results.append(queue)
