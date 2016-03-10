@@ -57,8 +57,8 @@ Minimal configuration
     ;search_query = org.apache.activemq.artemis:module=JMS,type=Queue,name=*
 
     [DEFAULTS]
-    queue_trheshold = 5000
-    consumers_trheshold = 5000
+    queue_threshold = 5000
+    consumers_threshold = 5000
     proc_url = http://www.google.com.br
 
 Output Format
