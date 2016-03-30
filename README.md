@@ -39,7 +39,15 @@ List of LLD discovery macros:
   </tr>
   <tr>
     <td><tt>{#CONS_THRESHOLD}</tt></td>
-    <td>Threshold for the consumers triggers.</td>
+    <td>Threshold for the minimum consumer connected.</td>
+  </tr>
+  <tr>
+    <td><tt>{#QUEUE_MAX}</tt></td>
+    <td>Threshold for the maximum message queued.</td>
+  </tr>
+  <tr>
+    <td><tt>{#QUEUE_MIN}</tt></td>
+    <td>Threshold for the minimum message queued.</td>
   </tr>
   <tr>
     <td><tt>{#PROC_URL}</tt></td>
@@ -57,7 +65,8 @@ Minimal configuration
     ;search_query = org.apache.activemq.artemis:module=JMS,type=Queue,name=*
 
     [DEFAULTS]
-    queue_threshold = 5000
+    queue_max_messages = 5000
+    queue_min_messages = 0
     consumers_threshold = 5000
     proc_url = http://www.google.com.br
 
@@ -68,17 +77,20 @@ Output Format
 {
 	"data": [{
 		"{#CONS_THRESHOLD}": "10",
-		"{#QUEUE_THRESHOLD}": "5000",
+		"{#QUEUE_MAX}": "5000",
+		"{#QUEUE_MIN}": "0",
 		"{#QUEUE_NAME}": "DLQ",
 		"{#PROC_URL}": "http://www.google.com.br"
 	}, {
 		"{#CONS_THRESHOLD}": "10",
-		"{#QUEUE_THRESHOLD}": "5000",
+		"{#QUEUE_MAX}": "5000",
+		"{#QUEUE_MIN}": "0",
 		"{#QUEUE_NAME}": "ExampleQueue",
 		"{#PROC_URL}": "http://www.google.com.br"
 	}, {
 		"{#CONS_THRESHOLD}": "10",
-		"{#QUEUE_THRESHOLD}": "5000",
+		"{#QUEUE_MAX}": "5000",
+		"{#QUEUE_MIN}": "0",
 		"{#QUEUE_NAME}": "ExpiryQueue",
 		"{#PROC_URL}": "http://www.google.com.br"
 	}]
