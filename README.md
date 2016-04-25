@@ -6,7 +6,8 @@ I write this project for two reasons:
  1. I Don't know java to contribute with RiotGamesMinions project.
  2. I needed more customs macros to use in prototypes for LLD 
 
-Works with [HornetQ](http://hornetq.jboss.org/) and [ActivemQ Artemis](https://activemq.apache.org/artemis/).
+Works with [ActivemQ Artemis](https://activemq.apache.org/artemis/) > 1.2.0.
+For [HornetQ](http://hornetq.jboss.org/) see hornetq branch
 
 Requirements
 ------------
@@ -61,8 +62,7 @@ Minimal configuration
     [main]
     host = localhost
     port = 8100
-    search_query = org.hornetq:module=JMS,type=Queue,name=*
-    ;search_query = org.apache.activemq.artemis:module=JMS,type=Queue,name=*
+    search_query = org.apache.activemq.artemis:module=JMS,type=Queue,name=*
 
     [DEFAULTS]
     queue_max_messages = 5000

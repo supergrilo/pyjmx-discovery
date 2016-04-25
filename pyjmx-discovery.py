@@ -36,7 +36,8 @@ queue_results = []
 
 for i in beans:
     line = str(i.getObjectName())
-    regex = r'(?P<org>[.\w]+):module=(?P<module>\w+),type=(?P<type>\w+),name="(?P<name>[\w_\d]+)"'
+    print line
+    regex = r'(?P<org>[.\w]+):type=(?P<type>\w+),brokerName="(?P<brokername>[\w\d_-]+)",module=(?P<module>\w+),serviceType=(?P<servicetype>\w+),name="(?P<name>[\w\d._-]+)"'
     
     r = re.compile(regex).search(line)
     if not isinstance(r, types.NoneType):
@@ -45,7 +46,7 @@ for i in beans:
         queue_max_messages = config._sections[key]["queue_max_messages"]
         queue_min_messages = config._sections[key]["queue_min_messages"]
         proc_url = config._sections[key]["proc_url"]
-        queue = { "{#QUEUE_NAME}": r.group('name'), "{#CONS_THRESHOLD}": cons_threshold, "{#QUEUE_MAX}": queue_max_messages, "{#QUEUE_MIN}": queue_min_messages, "{#PROC_URL}": proc_url }
+        queue = { "{#QUEUE_NAME}": r.group('name'), "{#CONS_THRESHOLD}": cons_threshold, "{#QUEUE_MAX}": queue_max_messages, "{#QUEUE_MIN}": queue_min_messages, "{#PROC_URL}": proc_url, "{#ARTEMIS_BROKER}": r.group('brokername') }
         queue_results.append(queue)
 
 #print "{ \"data\": %s }" % json.dumps({"data":queue_results})
