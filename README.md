@@ -66,7 +66,7 @@ Minimal configuration
     [main]
     host = localhost
     port = 8100
-    search_query = org.apache.activemq.artemis:module=JMS,type=Queue,name=*
+    search_query =org.apache.activemq.artemis:brokerName=*,module=JMS,name=*,serviceType=Queue,type=Broker
 
     [DEFAULTS]
     queue_max_messages = 5000
