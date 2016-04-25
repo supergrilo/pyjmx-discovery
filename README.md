@@ -51,6 +51,10 @@ List of LLD discovery macros:
     <td>Threshold for the minimum message queued.</td>
   </tr>
   <tr>
+    <td><tt>{#ARTEMIS_BROKER}</tt></td>
+    <td>The name of artemis broker.</td>
+  </tr>
+  <tr>
     <td><tt>{#PROC_URL}</tt></td>
     <td>For the urls on triggers. (This field started to support discovery macros on zabbix 3.0)<br>disable by default on template<br></td>
   </tr>
@@ -80,18 +84,21 @@ Output Format
 		"{#QUEUE_MAX}": "5000",
 		"{#QUEUE_MIN}": "0",
 		"{#QUEUE_NAME}": "DLQ",
+        "{#ARTEMIS_BROKER}": "localhost",
 		"{#PROC_URL}": "http://www.google.com.br"
 	}, {
 		"{#CONS_THRESHOLD}": "10",
 		"{#QUEUE_MAX}": "5000",
 		"{#QUEUE_MIN}": "0",
 		"{#QUEUE_NAME}": "ExampleQueue",
+        "{#ARTEMIS_BROKER}": "localhost",
 		"{#PROC_URL}": "http://www.google.com.br"
 	}, {
 		"{#CONS_THRESHOLD}": "10",
 		"{#QUEUE_MAX}": "5000",
 		"{#QUEUE_MIN}": "0",
 		"{#QUEUE_NAME}": "ExpiryQueue",
+        "{#ARTEMIS_BROKER}": "localhost",
 		"{#PROC_URL}": "http://www.google.com.br"
 	}]
 }
