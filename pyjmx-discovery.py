@@ -36,7 +36,6 @@ queue_results = []
 
 for i in beans:
     line = str(i.getObjectName())
-    print line
     regex = r'(?P<org>[.\w]+):type=(?P<type>\w+),brokerName="(?P<brokername>[\w\d_-]+)",module=(?P<module>\w+),serviceType=(?P<servicetype>\w+),name="(?P<name>[\w\d._-]+)"'
     
     r = re.compile(regex).search(line)
